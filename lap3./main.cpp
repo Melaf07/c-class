@@ -1,5 +1,7 @@
 #include "Person.hpp"
 #include "Faculty.hpp"
+#include "Fstudent.hpp"
+#include "Student.hpp"
 #include <iostream>
 using namespace std;
 void comparebet2fun(faculty f1,faculty f2){
@@ -10,15 +12,23 @@ void comparebet2fun(faculty f1,faculty f2){
     }
 }
 int main(int argc, const char * argv[]) {
-    faculty f1("melaf","098765432","1234567",5000.00);
-    faculty f2("hadeel","098765432","1234567",6000.00);
-    f1.printInfo();
-    cout<<"________________"<<endl;
-    f2.printInfo();
-    cout<<"________________"<<endl;
-    cout<<"ther result of compare method: "<<endl;
-    f1.comaper(f2);
-    cout<<"ther result of compare method: "<<endl;
-    comparebet2fun(f1, f2);
+//    lap3
+
+    date obj1(24,3,2002);
+//    lap4
+    fstudent obj("melaf","098765432","1234567",4.50,"876543",6000,obj1);
+    obj.printInfo();
+    cout<<"------------------------------------------------"<<endl;
+    person* ptr=new person("melaf","098765432",obj1);
+    ptr->printInfo();
+    delete ptr;
+     
+    *ptr=faculty("melaf","098765432","876543",6000,obj1);
+    ptr->printInfo();
+    delete ptr;
+     *ptr = student("melaf","098765432","1234567",4.50,obj1);
+    ptr->printInfo();
+    delete ptr;
+    
     return 0;
 }

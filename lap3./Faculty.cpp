@@ -4,12 +4,14 @@
 #include <stdio.h>
 
 using namespace std;
+faculty::faculty(){    
+}
 
-faculty::faculty(string name,string phone,string fid,double s)
-:person(name,phone){
+faculty::faculty(string name,string phone,string fid,double s,date &bd)
+:person(name,phone,bd){
     setid(fid);
     setsalary(s);
-    cout<<"faculty vonstructor runs"<< endl;
+    cout<<"faculty constructor runs"<< endl;
 }
 void faculty::setid(string fid){
     facultyid=fid;
@@ -24,7 +26,7 @@ double faculty::getsalary(){
     return salary;
 }
 void faculty::printInfo(){
-cout<<"fullname: "<< getname()<< " phone number: "<<getphone()<<" faculty id:"<<getid()<<" salary: "<< getsalary()<<endl;
+cout<<" faculty id:"<<getid()<<" salary: "<< getsalary()<<endl;
 }
 void faculty::comaper(faculty f){
     if (f.getsalary()>getsalary()) {
